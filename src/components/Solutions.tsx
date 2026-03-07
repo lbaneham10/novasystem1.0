@@ -46,18 +46,19 @@ export function Solutions() {
                                 className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'
                                     } items-center gap-8 md:gap-12`}
                             >
-                                {/* Mockup Placeholder */}
+                                {/* Mockup Image */}
                                 <div className="w-full md:w-1/2">
                                     <motion.div
                                         whileHover={{ scale: 1.02 }}
                                         transition={{ duration: 0.3 }}
-                                        className="bg-card rounded-3xl p-8 card-float aspect-[4/3] flex items-center justify-center cursor-pointer"
+                                        className="bg-card rounded-3xl p-2 sm:p-4 card-float shadow-xl flex items-center justify-center cursor-pointer overflow-hidden aspect-[4/3] relative"
                                     >
-                                        <div className="w-20 h-20 rounded-2xl bg-accent/10 flex items-center justify-center">
-                                            {IconComponent && (
-                                                <IconComponent size={40} className="text-accent" />
-                                            )}
-                                        </div>
+                                        <img
+                                            src={solution.image}
+                                            alt={solution.title}
+                                            className="w-full h-full object-cover rounded-2xl"
+                                        />
+                                        <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-3xl pointer-events-none"></div>
                                     </motion.div>
                                 </div>
 

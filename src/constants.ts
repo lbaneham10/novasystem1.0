@@ -113,6 +113,7 @@ export interface Solution {
     title: string;
     description: string;
     icon: string;
+    image: string;
 }
 
 export const SOLUTIONS: Solution[] = [
@@ -121,18 +122,21 @@ export const SOLUTIONS: Solution[] = [
         description:
             'Lightning-fast, mobile-optimized websites built for local trust and SEO. Every site is hand-crafted to feel like a local business, not a template.',
         icon: 'Monitor',
+        image: '/images/solution_1.png',
     },
     {
         title: 'The Unified Command Center',
         description:
             'Your Facebook messages, Google chats, texts, emails, and website leads all flow into one single, peaceful inbox. Never miss a message again.',
         icon: 'Inbox',
+        image: '/images/solution_2.png',
     },
     {
         title: 'The AI Shield',
         description:
             'Missed-Call Text Back instantly catches every missed call. AI Chatbots qualify leads 24/7. AI Voice Receptionists answer the phone when you\'re on a rooftop.',
         icon: 'ShieldCheck',
+        image: '/images/solution_3.png',
     },
 ];
 
