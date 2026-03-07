@@ -84,7 +84,7 @@ export const PRICING_TIERS: PricingTier[] = [
         name: 'The Automator',
         badge: 'Most Popular',
         setup: '$1,497',
-        monthly: '$497/mo',
+        monthly: '$597/mo',
         features: [
             'Everything in Foundation',
             'AI Website Chatbot',
@@ -96,7 +96,7 @@ export const PRICING_TIERS: PricingTier[] = [
     },
     {
         name: 'The Scale Partner',
-        setup: '$2,997',
+        setup: '$2,497',
         monthly: '$997/mo',
         features: [
             'Everything in Automator',
