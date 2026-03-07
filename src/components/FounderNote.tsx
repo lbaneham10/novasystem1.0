@@ -17,7 +17,7 @@ export function FounderNote() {
 
                 <div className="space-y-6 text-text-muted text-lg leading-relaxed text-left">
                     <p>
-                        I started Nova Systems because I watched my grandfather — <span className="font-bold text-text-dark">a plumber for 40 years</span> —
+                        I started Nova Systems because I watched my grandfather, <span className="font-bold text-text-dark">a plumber for 40 years</span>,
                         lose customers to companies with bigger budgets and shinier websites. He was the
                         best at what he did, but the digital world wasn't built for him.
                     </p>
