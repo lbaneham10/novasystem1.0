@@ -70,7 +70,7 @@ export interface PricingTier {
 export const PRICING_TIERS: PricingTier[] = [
     {
         name: 'The Foundation',
-        setup: '$1,500',
+        setup: '$997',
         monthly: '$297/mo',
         features: [
             'Custom Website',
@@ -83,7 +83,7 @@ export const PRICING_TIERS: PricingTier[] = [
     {
         name: 'The Automator',
         badge: 'Most Popular',
-        setup: '$2,000',
+        setup: '$1,497',
         monthly: '$497/mo',
         features: [
             'Everything in Foundation',
@@ -96,8 +96,8 @@ export const PRICING_TIERS: PricingTier[] = [
     },
     {
         name: 'The Scale Partner',
-        setup: '$3,000',
-        monthly: '$1,497/mo',
+        setup: '$2,997',
+        monthly: '$997/mo',
         features: [
             'Everything in Automator',
             '24/7 AI Voice Receptionist',
