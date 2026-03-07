@@ -28,8 +28,8 @@ export function FounderNote() {
                         AI is the tool we use to fight back.
                     </p>
                     <p>
-                        Nova Systems exists to make sure the local guy — the one who shows up on time,
-                        does honest work, and cares about your home —{' '}
+                        Nova Systems exists to make sure the local guy, the one who shows up on time,
+                        does honest work, and cares about your home,{' '}
                         <span className="font-bold text-accent">never gets left behind.</span>
                     </p>
                 </div>
