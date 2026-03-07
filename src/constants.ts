@@ -82,7 +82,6 @@ export const PRICING_TIERS: PricingTier[] = [
     },
     {
         name: 'The Automator',
-        badge: 'Most Popular',
         setup: '$1,497',
         monthly: '$597/mo',
         features: [
@@ -92,10 +91,10 @@ export const PRICING_TIERS: PricingTier[] = [
             'Priority Support',
         ],
         cta: 'Get Started',
-        highlighted: true,
     },
     {
         name: 'The Scale Partner',
+        badge: 'Most Popular',
         setup: '$2,497',
         monthly: '$997/mo',
         features: [
@@ -105,6 +104,7 @@ export const PRICING_TIERS: PricingTier[] = [
             'Dedicated Growth Manager',
         ],
         cta: 'Partner With Us',
+        highlighted: true,
     },
 ];
 
