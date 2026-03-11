@@ -8,7 +8,6 @@ import { Solutions } from './components/Solutions';
 import { Pricing } from './components/Pricing';
 import { TextMarquee } from './components/TextMarquee';
 import { Footer } from './components/Footer';
-import { MockChatbot } from './components/MockChatbot';
 
 export default function App() {
     useEffect(() => {
@@ -44,9 +43,6 @@ export default function App() {
 
             {/* H. Footer / Final CTA */}
             <Footer />
-
-            {/* I. Interactive Mock Chatbot for Intake Meetings */}
-            <MockChatbot />
         </div>
     );
 }

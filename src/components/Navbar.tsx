@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import { usePrototypeConfig } from '../hooks/usePrototypeConfig';
 
 const NAV_LINKS = [
     { label: 'Mission', href: '#mission' },
@@ -11,7 +10,6 @@ const NAV_LINKS = [
 ];
 
 export function Navbar() {
-    const config = usePrototypeConfig();
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -57,15 +55,11 @@ export function Navbar() {
                     <a href="#" className="flex items-center gap-2 group cursor-pointer">
                         <div className="w-9 h-9 rounded-xl bg-accent flex items-center justify-center">
                             <span className="text-white font-extrabold text-lg">
-                                {config ? config.businessName.charAt(0) : 'N'}
+                                N
                             </span>
                         </div>
                         <span className="font-extrabold text-xl tracking-tight text-text-dark">
-                            {config ? (
-                                config.businessName
-                            ) : (
-                                <>Nova<span className="text-accent">Systems</span></>
-                            )}
+                            Nova<span className="text-accent">Systems</span>
                         </span>
                     </a>
 
@@ -89,7 +83,7 @@ export function Navbar() {
                         onClick={(e) => handleNavClick(e, '#contact')}
                         className="hidden md:inline-flex items-center gap-2 bg-accent text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-light transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5"
                     >
-                        {config?.hooks?.cta || 'Arm Your Business'}
+                        Arm Your Business
                         <ArrowRight size={16} />
                     </a>
 
