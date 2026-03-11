@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import { usePrototypeConfig } from '../hooks/usePrototypeConfig';
 
 const NAV_LINKS = [
     { label: 'Mission', href: '#mission' },
@@ -10,6 +11,7 @@ const NAV_LINKS = [
 ];
 
 export function Navbar() {
+    const config = usePrototypeConfig();
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -46,18 +48,24 @@ export function Navbar() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 className={`fixed top-4 left-4 right-4 z-50 rounded-full px-6 py-3 transition-all duration-500 ${scrolled
-                        ? 'bg-cream/80 backdrop-blur-xl shadow-lg border border-white/40'
-                        : 'bg-transparent'
+                    ? 'bg-cream/80 backdrop-blur-xl shadow-lg border border-white/40'
+                    : 'bg-transparent'
                     }`}
             >
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     {/* Logo */}
                     <a href="#" className="flex items-center gap-2 group cursor-pointer">
                         <div className="w-9 h-9 rounded-xl bg-accent flex items-center justify-center">
-                            <span className="text-white font-extrabold text-lg">N</span>
+                            <span className="text-white font-extrabold text-lg">
+                                {config ? config.businessName.charAt(0) : 'N'}
+                            </span>
                         </div>
                         <span className="font-extrabold text-xl tracking-tight text-text-dark">
-                            Nova<span className="text-accent">Systems</span>
+                            {config ? (
+                                config.businessName
+                            ) : (
+                                <>Nova<span className="text-accent">Systems</span></>
+                            )}
                         </span>
                     </a>
 
@@ -81,7 +89,7 @@ export function Navbar() {
                         onClick={(e) => handleNavClick(e, '#contact')}
                         className="hidden md:inline-flex items-center gap-2 bg-accent text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-light transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5"
                     >
-                        Arm Your Business
+                        {config?.hooks?.cta || 'Arm Your Business'}
                         <ArrowRight size={16} />
                     </a>
 

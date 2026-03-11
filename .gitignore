@@ -1,4 +1,5 @@
 node_modules
 dist
 .env
+google_service_account.json
 .env.local

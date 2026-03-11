@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, PhoneForwarded, Bot, Star } from 'lucide-react';
 import { fadeUp, CYCLING_WORDS } from '../constants';
+import { usePrototypeConfig } from '../hooks/usePrototypeConfig';
 
 export function Hero() {
+    const config = usePrototypeConfig();
     const [wordIndex, setWordIndex] = useState(0);
 
     useEffect(() => {
@@ -37,25 +39,31 @@ export function Hero() {
 
                 {/* Headline */}
                 <h1 className="text-hero font-extrabold text-text-dark mb-6">
-                    The AI Revolution is Here.
-                    <br />
-                    <span className="text-text-muted font-bold">Let's Use It to Protect the</span>
-                    <br />
-                    <span className="relative inline-block h-[1.15em] overflow-hidden align-bottom">
-                        <AnimatePresence mode="wait">
-                            <motion.span
-                                key={wordIndex}
-                                initial={{ y: 40, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                exit={{ y: -40, opacity: 0 }}
-                                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                                className="inline-block font-serif italic text-accent"
-                            >
-                                {CYCLING_WORDS[wordIndex]}
-                            </motion.span>
-                        </AnimatePresence>
-                    </span>
-                    <span className="text-text-dark">.</span>
+                    {config?.hooks?.headline ? (
+                        <span className="text-text-dark">{config.hooks.headline}</span>
+                    ) : (
+                        <>
+                            The AI Revolution is Here.
+                            <br />
+                            <span className="text-text-muted font-bold">Let's Use It to Protect the</span>
+                            <br />
+                            <span className="relative inline-block h-[1.15em] overflow-hidden align-bottom">
+                                <AnimatePresence mode="wait">
+                                    <motion.span
+                                        key={wordIndex}
+                                        initial={{ y: 40, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        exit={{ y: -40, opacity: 0 }}
+                                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                                        className="inline-block font-serif italic text-accent"
+                                    >
+                                        {CYCLING_WORDS[wordIndex]}
+                                    </motion.span>
+                                </AnimatePresence>
+                            </span>
+                            <span className="text-text-dark">.</span>
+                        </>
+                    )}
                 </h1>
 
                 {/* Subheadline */}
@@ -65,9 +73,8 @@ export function Hero() {
                     transition={{ delay: 0.4, duration: 0.6 }}
                     className="text-lg md:text-xl text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed"
                 >
-                    Small businesses are the glue of our communities. We install automated
-                    Revenue Recovery Systems so local tradesmen never lose another lead
-                    while they're on the job.
+                    {config?.hooks?.pain_point_copy ||
+                        "Small businesses are the glue of our communities. We install automated Revenue Recovery Systems so local tradesmen never lose another lead while they're on the job."}
                 </motion.p>
 
                 {/* CTAs */}
@@ -83,7 +90,7 @@ export function Hero() {
                         whileTap={{ scale: 0.97 }}
                         className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                     >
-                        Arm Your Business
+                        {config?.hooks?.cta || 'Arm Your Business'}
                         <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
                             <ArrowRight size={18} />
                         </span>
