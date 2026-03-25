@@ -8,8 +8,11 @@ const NAV_LINKS = [
     { label: 'Pricing', href: '#pricing' },
     { label: 'Contact', href: '#contact' },
 ];
+interface NavbarProps {
+    onOpenBooking: () => void;
+}
 
-export function Navbar() {
+export function Navbar({ onOpenBooking }: NavbarProps) {
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -77,15 +80,25 @@ export function Navbar() {
                         ))}
                     </div>
 
-                    {/* Desktop CTA */}
-                    <a
-                        href="#contact"
-                        onClick={(e) => handleNavClick(e, '#contact')}
-                        className="hidden md:inline-flex items-center gap-2 bg-accent text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-light transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5"
-                    >
-                        Arm Your Business
-                        <ArrowRight size={16} />
-                    </a>
+                    {/* Desktop Actions */}
+                    <div className="hidden md:flex items-center gap-4">
+                        <a 
+                            href="tel:+15555555555"
+                            className="flex items-center gap-2 text-sm font-bold text-accent hover:text-accent-dark transition-colors duration-200"
+                        >
+                            📞 (555) 555-5555
+                        </a>
+                        <button
+                            onClick={() => {
+                                setMobileOpen(false);
+                                onOpenBooking();
+                            }}
+                            className="inline-flex items-center gap-2 bg-accent text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-light transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5"
+                        >
+                            Book Consultation
+                            <ArrowRight size={16} />
+                        </button>
+                    </div>
 
                     {/* Mobile Menu Button */}
                     <button
@@ -121,16 +134,18 @@ export function Navbar() {
                                 {link.label}
                             </motion.a>
                         ))}
-                        <motion.a
-                            href="#contact"
-                            onClick={(e) => handleNavClick(e, '#contact')}
+                        <motion.button
+                            onClick={() => {
+                                setMobileOpen(false);
+                                onOpenBooking();
+                            }}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.4 }}
-                            className="mt-4 bg-accent text-white px-8 py-4 rounded-full font-bold text-lg cursor-pointer"
+                            className="mt-4 bg-accent text-white px-8 py-4 rounded-full font-bold text-lg cursor-pointer flex items-center gap-2"
                         >
-                            Arm Your Business →
-                        </motion.a>
+                            Book Consultation <ArrowRight size={20} />
+                        </motion.button>
                     </motion.div>
                 )}
             </AnimatePresence>

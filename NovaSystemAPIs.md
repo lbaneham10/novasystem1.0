@@ -24,13 +24,14 @@ This file tracks the lifecycle and configuration of all APIs and MCP servers int
 ## Registry Logs 
 *Entries will be added here as keys are created or rotated.*
 
-- **[Mar 9, 2026] GitHub MCP Key:** Added Fine-Grained Personal Access Token (`github_pat_...`). Expires in 30 days.
-- **[Mar 9, 2026] Google Cloud GTM:** Added full Service Account JSON (`google_service_account.json`). GTM automation ready.
-- **[Mar 9, 2026] Vercel API Key:** Added API Token (`vcp_...`) to `.env`. Expires in 90 days.
-- **[Mar 9, 2026] Cloudflare API Key:** Added API Token (`qDsP-...`) to `.env`. Expires in 30 days.
-- **[Mar 9, 2026] Stitch MCP Key:** Added API Token (`AQ.A...`) to `.env`. Expires in 30 days.
-- **[Mar 9, 2026] GoHighLevel API:** Added Private Integration Token (`pit-9...`) to `.env`. Full scope access. Does not expire.
-- **[Mar 10, 2026] Anthropic API:** Added API Key (`sk-ant...`) to `.env`. Headless coding & copywriting engine. Does not expire.
+- **[Mar 9, 2026] GitHub MCP Key:** Integrated into `mcp_config.json`. Expires in 30 days.
+- **[Mar 9, 2026] Google Cloud GTM:** Service Account JSON verified.
+- **[Mar 9, 2026] Vercel API Key:** Integrated into `mcp_config.json`.
+- **[Mar 9, 2026] Cloudflare API Key:** Integrated into `mcp_config.json`.
+- **[Mar 9, 2026] Stitch MCP Key:** Integrated into `mcp_config.json`.
+- **[Mar 9, 2026] GoHighLevel API:** Ready for integration.
+- **[Mar 10, 2026] Anthropic API:** Ready for integration.
+- **[Mar 11, 2026] Unsplash API:** Integrated into `mcp_config.json`.
 
 ---
 

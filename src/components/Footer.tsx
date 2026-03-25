@@ -47,17 +47,29 @@ export function Footer() {
                         Book a free 15-minute discovery call. We'll show you exactly how much revenue is
                         slipping through the cracks — and how to plug the leaks.
                     </p>
-                    <motion.a
-                        href="#contact-form"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.97 }}
-                        className="inline-flex items-center gap-3 bg-accent text-white px-10 py-5 rounded-full font-bold text-lg shadow-[0_0_40px_rgba(45,106,79,0.4)] hover:shadow-[0_0_60px_rgba(45,106,79,0.6)] transition-all duration-300 cursor-pointer"
-                    >
-                        Schedule Your Strategy Call
-                        <span className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center">
-                            <ArrowRight size={20} />
-                        </span>
-                    </motion.a>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <motion.a
+                            href="#contact-form"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="inline-flex items-center gap-3 bg-accent text-white px-10 py-5 rounded-full font-bold text-lg shadow-[0_0_40px_rgba(45,106,79,0.4)] hover:shadow-[0_0_60px_rgba(45,106,79,0.6)] transition-all duration-300 cursor-pointer"
+                        >
+                            Schedule Your Strategy Call
+                            <span className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center">
+                                <ArrowRight size={20} />
+                            </span>
+                        </motion.a>
+                        
+                        <motion.a
+                            href="tel:+15555555555"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="inline-flex items-center gap-3 bg-white/5 border border-white/10 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                        >
+                            <Phone size={20} className="text-accent" />
+                            Call: (555) 555-5555
+                        </motion.a>
+                    </div>
                 </motion.div>
 
                 {/* Contact Form */}
