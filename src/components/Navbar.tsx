@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import { NovaLogo } from './NovaLogo';
 
 const NAV_LINKS = [
     { label: 'Mission', href: '#mission' },
@@ -55,12 +56,8 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
             >
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     {/* Logo */}
-                    <a href="#" className="flex items-center gap-2 group cursor-pointer">
-                        <div className="w-9 h-9 rounded-xl bg-accent flex items-center justify-center">
-                            <span className="text-white font-extrabold text-lg">
-                                N
-                            </span>
-                        </div>
+                    <a href="#" className="flex items-center gap-3 group cursor-pointer">
+                        <NovaLogo size={42} />
                         <span className="font-extrabold text-xl tracking-tight text-text-dark">
                             Nova<span className="text-accent">Systems</span>
                         </span>
@@ -83,10 +80,10 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                     {/* Desktop Actions */}
                     <div className="hidden md:flex items-center gap-4">
                         <a 
-                            href="tel:+15555555555"
+                            href="tel:+18203483482"
                             className="flex items-center gap-2 text-sm font-bold text-accent hover:text-accent-dark transition-colors duration-200"
                         >
-                            📞 (555) 555-5555
+                            📞 (820) 348-3482
                         </a>
                         <button
                             onClick={() => {

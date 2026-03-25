@@ -45,7 +45,7 @@ export default function App() {
             </main>
 
             {/* H. Footer / Final CTA */}
-            <Footer />
+            <Footer onOpenBooking={() => setIsBookingOpen(true)} />
 
             {/* Floating Booking Tab */}
             <button

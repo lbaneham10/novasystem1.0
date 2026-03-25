@@ -130,14 +130,14 @@ export function Hero() {
                     className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto"
                 >
                     {[
-                        { icon: PhoneForwarded, label: "Missed Call", desc: "→ Texted Back Automatically", rotate: "-rotate-1" },
-                        { icon: Bot, label: "AI Chatbot", desc: "Lead Qualified 24/7", rotate: "rotate-0", y: "translate-y-2" },
-                        { icon: Star, label: "Review Request", desc: "Sent Automatically", rotate: "rotate-1" }
+                        { icon: PhoneForwarded, label: "Missed Call", desc: "→ Texted Back Automatically" },
+                        { icon: Bot, label: "AI Chatbot", desc: "Lead Qualified 24/7" },
+                        { icon: Star, label: "Review Request", desc: "Sent Automatically" }
                     ].map((item, i) => (
                         <motion.div
                             key={i}
                             whileHover={{ y: -6, rotate: 0 }}
-                            className={`glass px-8 py-6 flex items-center gap-5 ${item.rotate} ${item.y || ''} border-white/50`}
+                            className="glass px-8 py-6 flex items-center gap-5 border-white/50"
                         >
                             <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0">
                                 <item.icon size={28} className="text-accent" />
