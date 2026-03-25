@@ -1,6 +1,9 @@
 import React from 'react';
 
 export function NovaLogo({ size = 36, className = "" }: { size?: number, className?: string }) {
+    // The logo uses a clever "double-stroke" SVG technique.
+    // By drawing identical paths twice (once thick white, once thinner green on top),
+    // it perfectly creates the seamless "hollow ribbon" effect of the attached N-Arrow logo.
     return (
         <svg 
             width={size} 
@@ -10,24 +13,49 @@ export function NovaLogo({ size = 36, className = "" }: { size?: number, classNa
             xmlns="http://www.w3.org/2000/svg"
             className={`drop-shadow-md ${className}`}
         >
-            {/* Background Rounded Square matching --accent color */}
-            <rect width="100" height="100" rx="24" fill="currentColor" className="text-accent" />
+            {/* Background Rounded Square */}
+            <rect width="100" height="100" rx="22" fill="currentColor" className="text-accent" />
             
-            {/* The 'N' Path */}
+            {/* 1. OUTER STROKE (The thick white base) */}
+            {/* Main N Ribbon */}
             <path 
-                d="M30 75V40C30 34 34 30 38 30C41 30 44 32 45 35L55 65C56 68 59 70 62 70C67 70 71 66 71 60V25" 
+                d="M 32 76 V 32 L 68 68 V 20" 
                 stroke="white" 
-                strokeWidth="10" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
+                strokeWidth="16" 
+                fill="none" 
+                strokeLinejoin="round" 
+                strokeLinecap="butt" 
             />
-            {/* Upward Arrow on the Right Stem */}
+            {/* Arrowhead */}
             <path 
-                d="M56 35L71 20L86 35" 
+                d="M 52 38 L 68 22 L 84 38" 
                 stroke="white" 
-                strokeWidth="10" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
+                strokeWidth="16" 
+                fill="none" 
+                strokeLinejoin="round" 
+                strokeLinecap="butt" 
+            />
+
+            {/* 2. INNER STROKE (The hollow cutout matching background color) */}
+            {/* Main N Ribbon Cutout */}
+            <path 
+                d="M 32 76 V 32 L 68 68 V 20" 
+                stroke="currentColor" 
+                strokeWidth="6" 
+                fill="none" 
+                strokeLinejoin="round" 
+                strokeLinecap="butt" 
+                className="text-accent"
+            />
+            {/* Arrowhead Cutout */}
+            <path 
+                d="M 52 38 L 68 22 L 84 38" 
+                stroke="currentColor" 
+                strokeWidth="6" 
+                fill="none" 
+                strokeLinejoin="round" 
+                strokeLinecap="butt" 
+                className="text-accent"
             />
         </svg>
     );
